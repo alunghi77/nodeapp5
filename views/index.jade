@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  - var myName = "Alessio Lunghi"
+
+  mixin users(users)
+   ul
+    each v, k in obj
+     li #{k}: #{v}
+
+  h1= title
+  p Welcome to #{title}
+
+  section#wrapper
+   h2 Basic Structure
+   section
+    p
+     span This is a span within a p within a div #{myName}
+
+  - users = ['Sally','Joseph','Michael','Sanjay']
+  - each user in users
+    p= user
+
+  - for user in users
+    p= user
+
+  - obj = { first_name: "george", last_name : "Ornob" }
+  mixin users(users)
